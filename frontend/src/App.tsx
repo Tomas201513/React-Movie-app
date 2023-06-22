@@ -1,11 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
-import Form from "./components/Form";
-
+import axios from "axios";
+interface User {
+  id: number;
+  name: string;
+}
 function App() {
+  const [data, setData] = useState("");
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get<User[]>("https://jsonplaceholder.typicode.com/users")
+      .then((res) => setData(res.data[0].name))
+      .catch((err) => {
+        setError(err);
+      });
+  }, []);
   return (
     <>
-      <Form />
+      {data && JSON.stringify(data)}
+      <br />
+      <br />
+      <br />
+      {error && JSON.stringify(error)}
     </>
   );
 }
