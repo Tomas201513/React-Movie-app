@@ -1,22 +1,12 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import axios from "axios";
-interface User {
-  id: number;
-  name: string;
-}
-function App() {
-  const [data, setData] = useState("");
-  const [error, setError] = useState(null);
+import UserService, { User } from "./service/user-service";
+import { CanceledError } from "axios";
+import useUsers from "./hooks/useUsers";
 
-  useEffect(() => {
-    axios
-      .get<User[]>("https://jsonplaceholder.typicode.com/users")
-      .then((res) => setData(res.data[0].name))
-      .catch((err) => {
-        setError(err);
-      });
-  }, []);
+function App() {
+  const { data, error, loading } = useUsers();
+  if (loading) return <p>loading</p>;
   return (
     <>
       {data && JSON.stringify(data)}
