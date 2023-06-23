@@ -1,7 +1,4 @@
-import { useState, useEffect } from "react";
 import "./App.css";
-import UserService, { User } from "./service/user-service";
-import { CanceledError } from "axios";
 import useUsers from "./hooks/useUsers";
 
 function App() {
