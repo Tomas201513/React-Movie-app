@@ -9,7 +9,8 @@ const GameGrid = () => {
     <>
       {error && <Text>{error}</Text>}
       <SimpleGrid
-        spacing={4}
+        padding={3}
+        spacing={10}
         templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
       >
         {games.map((game) => (
