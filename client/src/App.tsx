@@ -1,19 +1,30 @@
-import { Button, ButtonGroup } from "@chakra-ui/react";
+import { Grid, GridItem, Show } from "@chakra-ui/react";
 import "./App.css";
+import Navbar from "./components/Navbar";
+import GameGrid from "./components/GameGrid";
 
 function App() {
   return (
-    <ButtonGroup>
-      <Button onClick={() => console.log("button1")} colorScheme="blue">
-        Button1
-      </Button>
-      <Button onClick={() => console.log("button2")} colorScheme="blue">
-        Button2
-      </Button>
-      <Button onClick={() => console.log("button3")} colorScheme="blue">
-        Button3
-      </Button>
-    </ButtonGroup>
+    <>
+      <Grid
+        templateAreas={{
+          base: `"nav nav" "main main" `,
+          lg: `"nav nav" "aside main" `,
+        }}
+      >
+        <GridItem area={"nav"}>
+          <Navbar />
+        </GridItem>
+        <Show above="lg">
+          <GridItem area={"aside"} bg={"pink"}>
+            side
+          </GridItem>
+        </Show>
+        <GridItem area={"main"} bg={"gray"}>
+          <GameGrid />
+        </GridItem>
+      </Grid>
+    </>
   );
 }
 
