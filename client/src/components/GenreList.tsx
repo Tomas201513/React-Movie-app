@@ -7,6 +7,7 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import useGenre, { Genre } from "../hooks/useGenre";
+
 interface Props {
   onSelectGenre: (genre: Genre) => void;
   selectedGenre: Genre | null;
@@ -20,7 +21,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
       <List>
         {data.map((genre) => (
           <ListItem key={genre.id} paddingY={"5px"}>
-            <HStack>
+            <HStack spacing={1}>
               <Image
                 src={genre.image_background}
                 boxSize={"32px"}
@@ -28,6 +29,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
               />
               <Button
                 fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+                overflow={"hidden"}
                 variant="link"
                 fontSize={"lg"}
                 onClick={() => {
