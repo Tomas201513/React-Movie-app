@@ -18,7 +18,7 @@ const GameGrid = ({ gameQuery }: Props) => {
 
       <SimpleGrid
         padding={3}
-        spacing={3}
+        spacing={6}
         templateColumns="repeat(auto-fill, minmax(250px, 2fr))"
       >
         {loading &&
