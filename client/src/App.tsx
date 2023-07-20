@@ -72,3 +72,21 @@ function App() {
 }
 
 export default App;
+        /*<GridItem area={"main"}>
+          <GameHeading gameQuery={gameQuery} />
+          <HStack spacing={5}>
+            <PlatformSelector
+              selectedPlatform={gameQuery.platform}
+              onSelectedPlatform={(platform) => {
+                setGameQuery({ ...gameQuery, platform });
+              }}
+            />
+            <SortSelector
+              sortOrder={gameQuery.sortOrders}
+              onSelectSortOrder={(sortOrders) =>
+                setGameQuery({ ...gameQuery, sortOrders })
+              }
+            />
+          </HStack>
+          <GameGrid gameQuery={gameQuery} />
+        </GridItem>*/
