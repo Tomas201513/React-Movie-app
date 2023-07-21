@@ -31,3 +31,20 @@ const GameCard = ({ game }: Props) => {
 };
 
 export default GameCard;
+
+    /*<Card>
+      <Image borderRadius={5} src={getCropedImageUrl(game.background_image)} />
+      <CardBody>
+        <HStack justifyContent={"space-between"}>
+          <PlatformIconList
+            key={game.id}
+            platforms={game.parent_platforms.map((p) => p.platform)}
+          />
+          <CriticScore metacritic={game.metacritic} />
+        </HStack>
+        <Heading fontSize={"2xl"} marginTop={3}>
+          {game.name}
+        </Heading>
+        <Emoji rate={game.rating_top} />
+      </CardBody>
+    </Card>*/
