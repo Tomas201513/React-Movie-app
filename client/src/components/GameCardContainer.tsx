@@ -9,3 +9,12 @@ const GameCardContainer = ({ children }: Props) => {
 };
 
 export default GameCardContainer;
+
+
+/*
+interface Props {
+  children: ReactNode;
+}
+const GameCardContainer = ({ children }: Props) => {
+  return <Box overflow={"hidden"}>{children}</Box>;
+};*/
