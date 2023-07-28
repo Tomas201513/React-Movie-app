@@ -73,10 +73,3 @@ function App() {
 
 export default App;
        
-/*
-export interface GameQuery {
-  genre: Genre | null;
-  platform: Platform | null;
-  sortOrders: string;
-  searchText: string;
-}*/
